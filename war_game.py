@@ -4,6 +4,7 @@ ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten',
 values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 
             'Nine':9, 'Ten':10, 'Jack':11, 'Queen':12, 'King':13, 'Ace':14}
 
+#card object
 class Card:
     
     def __init__(self,suit,rank):
@@ -33,6 +34,7 @@ class Deck:
         # Note we remove one card from the list of all_cards
         return self.all_cards.pop()        
 
+#player object
 class Player:
     
     def __init__(self,name):
@@ -67,19 +69,19 @@ for x in range(26):
     player_two.add_cards(new_deck.deal_one())
   
 
-
+#game_course
 game_on = True
 round_num = 0
 while game_on:
     round_num += 1
     print(f"Round {round_num}")
-    
+    #player two won
     if len(player_one.all_cards) == 0:
         print("Player One out of cards! Game Over")
         print("Player Two Wins!")
         game_on = False
         break
-    
+    #player one won
     if len(player_two.all_cards) == 0:
         print("Player Two out of cards! Game Over")
         print("Player One Wins!")
